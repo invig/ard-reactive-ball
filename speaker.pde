@@ -5,7 +5,7 @@ void speakerOn() {
 }
 
 void speakerOff() {
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
 }
 
 void speakerTwo() {
@@ -41,7 +41,7 @@ void speakerThree() {
   digitalWrite(speakerPin, LOW);
     noLight();
 }
-   
+
 void speakerFour() {
   digitalWrite(speakerPin, HIGH);
   redLight();
