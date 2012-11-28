@@ -6,7 +6,7 @@ void playerSelectorTwo() {
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorTwo();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);
@@ -29,7 +29,7 @@ void playerSelectorThree() {
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorThree();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);
@@ -47,18 +47,18 @@ void playerSelectorThree() {
   if (randNumber == 4) {
     playerSelectorThree();
   }
-  
+
 }
 
 void playerSelectorFour() {
-  randNumber = random(1,5); 
+  randNumber = random(1,5);
   while (randNumber == currentPlayer){
     randNumber = random(1,5);
   }
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorFour();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);

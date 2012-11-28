@@ -15,7 +15,7 @@ void greenLight() {
   analogWrite(ledpinR, 0);
   analogWrite(ledpinG, 255);
   analogWrite(ledpinB, 0);
-}  
+}
 
 void blueLight() {
   analogWrite(ledpinR, 0);
@@ -136,7 +136,7 @@ void rainbowLightShow() {
     analogWrite(ledpinG, 0);
     analogWrite(ledpinR, valueR);
     delay(1);
-  }   
+  }
    for(valueG = 0 ; valueG <= 255; valueG+=1) // G up, all on
   {
     analogWrite(ledpinB, 255);

@@ -62,14 +62,14 @@ void initiateBall() {
   startShake = false;
   gameOneStatus = false;
   currentPlayer = 0;
-  
+
   rainbowLightShow();
   speakerOn();
   delay (400);
   speakerOff();
-  while (initStatus == false) { 
-    readAcceleration(); 
-    checkForStart(); 
+  while (initStatus == false) {
+    readAcceleration();
+    checkForStart();
     if (startShake == true){
       greenLight();
       delay(2000);
@@ -82,7 +82,7 @@ void initiateBall() {
 void gameSelection () {
   boolean gameSelectionStatus = false;
   startShake = false;
-  
+
   while (gameSelectionStatus == false){
     boxMaroon();
     for (int i=0; i<8000; i++){
@@ -117,7 +117,7 @@ void gameSelection () {
         playerSelection();
       }
     }
-   
+
   }
 }
 
@@ -183,13 +183,13 @@ void gameOne() {
     maxCatches = random(5, 15);
   } else {
     gameSelection();
-  } 
+  }
   while (gameOneStatus == false) {
     ballCatch = 0;
     readAcceleration();
     checkForCatch();
     if (ballCatch == true) {
-      if(numberOfPlayers == 2){  
+      if(numberOfPlayers == 2){
         playerSelectorTwo();
         numberOfCatches++;
       }
@@ -212,60 +212,60 @@ void gameOneEnd() {
   digitalWrite(speakerPin, HIGH);
   blueLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   redLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   purpleLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   greenLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   allLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   blueLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
-  redLight();  
+  redLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   purpleLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   greenLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   allLight();
   digitalWrite(speakerPin, HIGH);
   blueLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   redLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   purpleLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   greenLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   allLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   blueLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
-  redLight();  
+  redLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   purpleLight();
   delay(100);
   digitalWrite(speakerPin, HIGH);
   greenLight();
   delay(100);
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
   redLight();
   delay(10000);
   initiateBall();
@@ -351,7 +351,7 @@ void greenLight() {
   analogWrite(ledpinR, 0);
   analogWrite(ledpinG, 255);
   analogWrite(ledpinB, 0);
-}  
+}
 
 void blueLight() {
   analogWrite(ledpinR, 0);
@@ -472,7 +472,7 @@ void rainbowLightShow() {
     analogWrite(ledpinG, 0);
     analogWrite(ledpinR, valueR);
     delay(1);
-  }   
+  }
    for(valueG = 0 ; valueG <= 255; valueG+=1) // G up, all on
   {
     analogWrite(ledpinB, 255);
@@ -496,7 +496,7 @@ void playerSelectorTwo() {
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorTwo();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);
@@ -519,7 +519,7 @@ void playerSelectorThree() {
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorThree();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);
@@ -537,18 +537,18 @@ void playerSelectorThree() {
   if (randNumber == 4) {
     playerSelectorThree();
   }
-  
+
 }
 
 void playerSelectorFour() {
-  randNumber = random(1,5); 
+  randNumber = random(1,5);
   while (randNumber == currentPlayer){
     randNumber = random(1,5);
   }
   if (numberOfCatches == 0 && randNumber == 1){
      playerSelectorFour();
   }
-  if (randNumber == 1) { 
+  if (randNumber == 1) {
     aquaLight();
     currentPlayer = 1;
     delay(800);
@@ -580,7 +580,7 @@ void speakerOn() {
 }
 
 void speakerOff() {
-  digitalWrite(speakerPin, LOW); 
+  digitalWrite(speakerPin, LOW);
 }
 
 void speakerTwo() {
@@ -616,7 +616,7 @@ void speakerThree() {
   digitalWrite(speakerPin, LOW);
     noLight();
 }
-   
+
 void speakerFour() {
   digitalWrite(speakerPin, HIGH);
   redLight();
@@ -648,10 +648,10 @@ int main(void)
 	init();
 
 	setup();
-    
+
 	for (;;)
 		loop();
-        
+
 	return 0;
 }
 
